@@ -1,0 +1,36 @@
+# version: "3.9"
+name: laravel_multi_authentication_cart
+services:
+  app:
+    image: laravel_base:11
+    volumes:
+      - ./laravel:/laravel
+      - ./infra/php/php.ini:/usr/local/etc/php/php.ini
+    ports:
+      - 8000:8000
+      - 5173:5173
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0.34
+    user: mysql
+    ports:
+      - 3306:3306
+    env_file:
+      - ./infra/mysql/.env
+    volumes:
+      - mysql:/var/lib/mysql
+      - ./infra/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+  phpmyadmin:
+    image: phpmyadmin
+    depends_on:
+      - db
+    env_file:
+      - ./infra/phpmyadmin/.env
+    ports:
+      - "3001:80"
+volumes:
+  mysql:
+    driver: local

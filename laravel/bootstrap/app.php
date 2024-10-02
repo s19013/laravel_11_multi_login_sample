@@ -19,7 +19,21 @@ return Application::configure(basePath: dirname(__DIR__))
         },
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->redirectUsersTo(function ($request) {
+            // 倉庫系のurlでログイン済みの場合、未ログインユーザーのみアクセスできるページにアクセスしようとすると弾く
+            if ($request->is('warehouse*')) {
+                return route('warehouse.dashboard');
+            }
+        });
+        $middleware->redirectGuestsTo(function ($request) {
+            // 倉庫系のurlで認証が必要な場合,倉庫ユーザーログイン画面へ飛ばす
+            if ($request->is('warehouse*')) {
+                return route('warehouse.login');
+            }
+
+            // それ以外のページは取り出すルートへ
+            return redirect('/');
+        });
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

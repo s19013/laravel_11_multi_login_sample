@@ -9,5 +9,13 @@
 <body>
     倉庫ユーザー
     ログイン成功
+
+    <pre>
+        {{Auth::user()}}
+    </pre>
+    <form action="{{route('warehouse.logout')}}" method="post">
+        @csrf
+        <button type="submit">ログアウト</button>
+    </form>
 </body>
 </html>

@@ -19,7 +19,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        return view('warehouse.auth.register');
     }
 
     /**
@@ -43,8 +43,8 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
+        Auth::guard('warehouse')->login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect(route('warehouse.dashboard', absolute: false));
     }
 }

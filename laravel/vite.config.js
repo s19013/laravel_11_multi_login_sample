@@ -8,4 +8,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    server: {
+        // --hostつけるのが面倒なので定義
+        host: true,
+        port: 5173
+    }
 });

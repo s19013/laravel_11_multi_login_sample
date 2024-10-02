@@ -11,4 +11,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    server: {
+        // --hostと同義
+        host: true,
+        port: 5173
+    }
 });

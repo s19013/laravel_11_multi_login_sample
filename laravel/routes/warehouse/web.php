@@ -8,7 +8,7 @@ Route::get('/', function () {
 })->name('test');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('warehouse.dashboard');
 })->middleware(['auth:warehouse', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';

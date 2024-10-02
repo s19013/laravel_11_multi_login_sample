@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Auth;
+namespace App\Http\Requests\Warehouse\Auth;
 
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
@@ -41,7 +41,10 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+        if (
+            ! Auth::guard('warehouse')->attempt($this->only('email', 'password'),
+            $this->boolean('remember'))
+        ) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([

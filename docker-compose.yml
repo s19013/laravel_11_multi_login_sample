@@ -1,5 +1,5 @@
 # version: "3.9"
-name: laravel_multi_authentication_cart
+name: laravel_multi_authentication
 services:
   app:
     image: laravel_base:11

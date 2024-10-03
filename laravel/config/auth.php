@@ -44,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'warehouse_users',
         ],
+        'agency' => [
+            'driver' => 'session',
+            'provider' => 'agency_users',
+        ],
     ],
 
     /*
@@ -67,6 +71,11 @@ return [
         'warehouse_users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\WarehouseUser::class),
+        ],
+
+        'agency_users' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\AgencyUser::class),
         ],
 
         // 'users' => [
@@ -98,6 +107,12 @@ return [
         'warehouse_users' => [
             'provider' => 'warehouse_users',
             'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'warehouse_user_password_reset_tokens'),
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'agency_users' => [
+            'provider' => 'agency_users',
+            'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'agency_user_password_reset_tokens'),
             'expire' => 60,
             'throttle' => 60,
         ],

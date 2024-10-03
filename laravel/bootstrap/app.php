@@ -4,6 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\SessionCookieSwitcher;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -24,6 +25,8 @@ return Application::configure(basePath: dirname(__DIR__))
         },
     )
     ->withMiddleware(function (Middleware $middleware) {
+        $middleware->append(SessionCookieSwitcher::class);
+
         $middleware->redirectUsersTo(function ($request) {
             // 倉庫系のurlでログイン済みの場合、未ログインユーザーのみアクセスできるページにアクセスしようとすると弾く
             if ($request->is('warehouse*')) {

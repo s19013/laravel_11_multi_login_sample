@@ -16,6 +16,11 @@ return Application::configure(basePath: dirname(__DIR__))
                 ->prefix('warehouse')
                 ->name('warehouse.')
                 ->group(base_path('routes/warehouse/web.php'));
+
+            Route::middleware('web')
+                ->prefix('agency')
+                ->name('agency.')
+                ->group(base_path('routes/agency/web.php'));
         },
     )
     ->withMiddleware(function (Middleware $middleware) {
@@ -24,11 +29,22 @@ return Application::configure(basePath: dirname(__DIR__))
             if ($request->is('warehouse*')) {
                 return route('warehouse.dashboard');
             }
+
+            if ($request->is('agency*')) {
+                return route('agency.dashboard');
+            }
+
+            // それ以外のページは取り出すルートへ
+            return redirect('/');
         });
         $middleware->redirectGuestsTo(function ($request) {
             // 倉庫系のurlで認証が必要な場合,倉庫ユーザーログイン画面へ飛ばす
             if ($request->is('warehouse*')) {
                 return route('warehouse.login');
+            }
+
+            if ($request->is('agency*')) {
+                return route('agency.login');
             }
 
             // それ以外のページは取り出すルートへ

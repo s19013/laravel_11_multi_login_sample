@@ -1,6 +1,9 @@
 #!/bin/sh
 # laravelコンテナに入ったらやることを1つのファイルにまとめました
 
+# .env.exampleから.envを作成
+cp .env.example .env
+
 # composer.jsonにあるやつインストール
 composer install
 

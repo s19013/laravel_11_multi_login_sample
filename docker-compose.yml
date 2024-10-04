@@ -12,6 +12,7 @@ services:
       - 5173:5173
     tty: true
     stdin_open: true
+    entrypoint: /usr/local/bin/entrypoint.sh
     depends_on:
       - db
   db:

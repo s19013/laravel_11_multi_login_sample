@@ -22,4 +22,8 @@ RUN docker-php-ext-install intl pdo_mysql zip bcmath
 RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
 RUN apt-get install -y nodejs
 
+# entrypoint.shをコンテナ内にコピー
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 WORKDIR /laravel

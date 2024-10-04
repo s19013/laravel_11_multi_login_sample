@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// どれにも当てはまらなかった時の処理
 Route::fallback(function (Request $request) {
     if ($request->is('warehouse/*')){
         return redirect(route('warehouse.test'));

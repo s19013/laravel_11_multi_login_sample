@@ -1,10 +1,9 @@
 # version: "3.9"
-name: laravel_multi_authentication
+name: laravel_multi_authentication_sample
 services:
   app:
-    # イメージが作られてなかったらimageをコメントアウトしてbuildを使う
-    # build: ./infra/php
     image: laravel_base:11
+    build: ./infra/php # イメージがなかったらイメージを作る
     volumes:
       - ./laravel:/laravel
       - ./infra/php/php.ini:/usr/local/etc/php/php.ini
@@ -25,6 +24,7 @@ services:
     volumes:
       - mysql:/var/lib/mysql
       - ./infra/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./infra/mysql/sql:/docker-entrypoint-initdb.d
   phpmyadmin:
     image: phpmyadmin
     depends_on:

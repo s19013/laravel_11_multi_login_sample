@@ -2,6 +2,8 @@
 name: laravel_multi_authentication
 services:
   app:
+    # イメージが作られてなかったらimageをコメントアウトしてbuildを使う
+    # build: ./infra/php
     image: laravel_base:11
     volumes:
       - ./laravel:/laravel

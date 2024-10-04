@@ -15,7 +15,7 @@ class SessionCookieSwitcher
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // リクエストのパスに応じてセッションクッキー名を設定
+        // リクエストのパスに応じて使うセッションを変更
         if ($request->is('warehouse/*')) {
             config(['session.cookie' => config('session.warehouse_cookie')]);
         }

@@ -25,6 +25,7 @@ return Application::configure(basePath: dirname(__DIR__))
         },
     )
     ->withMiddleware(function (Middleware $middleware) {
+        // セッション切り替えを有効化
         $middleware->append(SessionCookieSwitcher::class);
 
         $middleware->redirectUsersTo(function ($request) {

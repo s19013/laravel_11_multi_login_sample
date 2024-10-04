@@ -14,7 +14,7 @@ else
 fi
 
 # npm run dev をバックグラウンドで実行
-npm run dev &
+# npm run dev &
 
 # serve.sh を実行
-bash /laravel/serve.sh
+# bash /laravel/serve.sh

@@ -2,11 +2,12 @@
 倉庫ユーザー用のサイト、代理店ユーザー用のサイトを一つにまとめる必要があったので
 
 # dockerを起動する前に
-./infra/mysqlの `.env.example`を `.env`としてコピー
-./infra/phpmyadminの  `.env.example`を`.env`としてコピー
+./infra/mysqlの `.env.example`を `.env`としてコピー  
+./infra/phpmyadminの  `.env.example`を`.env`としてコピー  
 
 # dockerを起動したら
-appコンテナ内で,`npm run dev &`,`bash serve.sh`を実行
+その前に裏でnpm installなどが動いているはずなので、3分ほど待つ  
+appコンテナ内で,`npm run dev &`,`bash serve.sh`を実行  
 
 
 # 雑な手順

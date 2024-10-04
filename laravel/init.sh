@@ -15,3 +15,6 @@ php artisan key:generate
 
 # package.jsonにあるやつインストール
 npm install -y
+
+# migrate実行
+php artisan migrate

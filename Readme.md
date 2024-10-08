@@ -29,6 +29,19 @@ appコンテナ内で,`npm run dev &`,`bash serve.sh`を実行
 	* モデルの'sendPasswordResetNotification'をオーバーライドしよう
 	* Password::sendResetLink, Password::resetにbrokerを追加しよう
 
+# 仕様
+倉庫ユーザー、代理店ユーザーそれぞれテーブルを作っている  
+
+## アクセス制限
+倉庫ページにアクセスするときは、倉庫ユーザーテーブルにデータがあるかを確認、なければ弾く  
+代理店ページにアクセスするときはは代理店ページテーブルにデータがあるかを確認、なければ弾く    
+
+## セッション
+倉庫ページにアクセスするときは倉庫セッション  
+代理店ページにアクセスするときは代理店セッションを使う
+
+多分分けなくても問題ないかもだけど、倉庫、代理店両方アクセスできるユーザーが片方ログアウトすると両方ログアウトされてしまう。
+
 # 参考サイト
 * https://readouble.com/laravel/11.x/ja/passwords.html
 * https://implist.dev/entries/laravel-multiple-login

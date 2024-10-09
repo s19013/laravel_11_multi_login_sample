@@ -20,8 +20,17 @@ appコンテナ内で,`npm run dev &`,`bash serve.sh`を実行
 1. app.phpに非ログインユーザー、ログインユーザーのアクセス制限を設定しよう
 1. カスタムルーティングの認証系のルートにガードをつけよう
 1. ログインリクエストフォームを用意しよう
-1. ログイン、新規登録コントローラーを編集しようう
+1. ログイン、新規登録コントローラーを編集しよう
+	* 渡すviewやrouteがのパスが正しいか確認しよう 
+   	* guard()を追加しよう
+   	  	* AuthenticatedSessionController
+   	  	* ConfirmablePasswordController
+   	  	* RegisteredUserController
+   	* broker()を追加しよう
+   	 	* NewPasswordController
+   	   	* PasswordResetLinkController
 1. bladeを用意しよう
+ 	* 送り先が正しいか確認しよう
 1. 倉庫ユーザー用、代理店ユーザー用のセッションを切り替えるミドルウェアを作ろう
 1. パスワードリセットの準備をしよう
 	* 'Illuminate\Auth\Notifications\ResetPassword' を継承したクラスを作ろう

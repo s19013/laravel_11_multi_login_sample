@@ -54,6 +54,7 @@ appコンテナ内で,`npm run dev &`,`bash serve.sh`を実行
 多分分けなくても問題ないかもだけど、倉庫、代理店両方アクセスできるユーザーが片方ログアウトすると両方ログアウトされてしまう。
 
 # 参考サイト
+* https://laranote.jp/laravel-11-breeze-multi-auth-user-admin-example
 * https://readouble.com/laravel/11.x/ja/passwords.html
 * https://implist.dev/entries/laravel-multiple-login
 * https://engineer-daily.com/laravel11-breeze-redirect-to/

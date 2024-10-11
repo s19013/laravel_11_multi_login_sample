@@ -28,6 +28,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // セッション切り替えを有効化
         $middleware->append(SessionCookieSwitcher::class);
 
+        // これ多分guest:warehouseとかと被ってるから外して良いかも?
         $middleware->redirectUsersTo(function ($request) {
             // 倉庫系のurlでログイン済みの場合、未ログインユーザーのみアクセスできるページにアクセスしようとすると弾く
             if ($request->is('warehouse*')) {

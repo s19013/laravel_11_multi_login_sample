@@ -26,6 +26,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         // セッション切り替えを有効化
+        // webミドルウェアグループに組み込む場合は、startSessionよりも先に動く必要があるため、先頭にいれる
+        // (使うセッションを変更してから、セッションを発行する流れを作る)
         $middleware->append(SessionCookieSwitcher::class);
 
         // これ多分guest:warehouseとかと被ってるから外して良いかも?

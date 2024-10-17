@@ -60,3 +60,5 @@ appコンテナ内で,`npm run dev &`,`bash serve.sh`を実行
 * https://engineer-daily.com/laravel11-breeze-redirect-to/
 * https://reffect.co.jp/laravel/breeze_multi_auth	
 * https://zenn.dev/369code/articles/9b47ef21917c3a
+* https://humo-life.net/memo/doku.php?id=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E8%A8%80%E8%AA%9E:php:laravel:%E8%AA%8D%E8%A8%BC:%E3%83%9E%E3%83%AB%E3%83%81%E8%AA%8D%E8%A8%BC%E3%81%AE%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E5%88%86%E3%81%91%E3%82%8B
+* https://monmon.jp/1096/laravel%E3%81%AE%E3%83%9E%E3%83%AB%E3%83%81%E8%AA%8D%E8%A8%BC%E6%99%82%E3%81%AB%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E5%88%86%E3%81%91%E3%82%8B/

@@ -58,6 +58,8 @@ appコンテナ内で,`npm run dev &`,`bash serve.sh`を実行
 代理店ページにアクセスするときは代理店セッションを使う
 
 多分分けなくても問題ないかもだけど、倉庫、代理店両方アクセスできるユーザーが片方ログアウトすると両方ログアウトされてしまう。
+##### 2025/05/09 追記
+そのような現象は確認できてない
 
 # 参考サイト
 * https://laranote.jp/laravel-11-breeze-multi-auth-user-admin-example

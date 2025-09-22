@@ -1,6 +1,8 @@
 FROM php:8.2-fpm-buster
 
+# root 権限で Composer を実行しても警告を出さない
 ENV COMPOSER_ALLOW_SUPERUSER=1
+# Composer のキャッシュ場所を固定化して、権限問題回避＆ビルド高速化
 ENV COMPOSER_HOME=/composer
 
 # composerインストール
